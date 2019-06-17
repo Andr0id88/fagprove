@@ -13,20 +13,21 @@ klientmaskinene og meldt de inn i AD mens server installasjonen pågår og derme
 ---
 ## Etter ren installasjon  ##
 
-*For og bytte navn på serveren.*
+##### For og bytte navn på serveren. #####
 ```{PowerShell}
 $ServerName = Read-Host -Prompt 'Skriv inn ønsket server navn'
 Rename-Computer -NewName $ServerName
 ```
 
-*Variabler for setting av IP addresser.*
+##### Variabler for setting av IP addresser. #####
 ```
 $Interface = "Ethernet"
 $ServerIp = Read-Host -Prompt "Hvilken IP ønsker du at serveren skal ha?"
 $DefautlGateway = Read-Host -Prompt "Hva er IP addressen til default gateway?"
 ```
 
-*Dette er for og fjerne gammel konfigurasjon, om dette er en helt ny server er ikke disse 3 linjene nødvendig.*
+##### Dette er for og fjerne gammel konfigurasjon, om dette er en helt ny server er ikke disse 3 linjene nødvendig. #####
+
 ```
 Remove-NetRoute -InterfaceAlias $Interface -AddressFamily IPv4
 Set-NetIPInterface -InterfaceAlias $Interface -Dhcp Enabled -AddressFamily IPv4
