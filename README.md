@@ -1,4 +1,4 @@
-# Fagprøve IKT 2019
+# <p style="text-align: center;"> Fagprøve IKT 2019 </p>
 ![Forside](https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.kinyu-z.net%2Fdata%2Fwallpapers%2F59%2F907086.jpg&f=1)
 
 ---
