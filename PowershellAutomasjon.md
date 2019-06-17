@@ -30,14 +30,14 @@ Set-NetIPInterface -InterfaceAlias $Interface -Dhcp Enabled -AddressFamily IPv4
 Set-DnsClientServerAddress -InterfaceAlias $Interface -ResetServerAddresses
 ```
 
-Setter ny ip adresse til serveren med valgt IP fra variablen over kalt, ServerIp.
-Get-NetAdapter er nødvendig for å finne ut index nummeret som er tilknyttet ethernet kabelen
-Man kan finne den manuelt også ved å bruke netsh interface ipv4 show interfaces i cmd f.eks
+*Setter ny ip adresse til serveren med valgt IP fra variablen over kalt, ServerIp.*
+*Get-NetAdapter er nødvendig for å finne ut index nummeret som er tilknyttet ethernet kabelen*
+*Man kan finne den manuelt også ved å bruke netsh interface ipv4 show interfaces i cmd f.eks*
 ```
 New-NetIPAddress –IPAddress $ServerIp -DefaultGateway $DefautlGateway -PrefixLength 24 -InterfaceIndex (Get-NetAdapter).InterfaceIndex
-
 ```
 
-# Denne linjen setter opp DNS, den setter serveren som primary DNS og defautl gateway som nr2.
+*Denne linjen setter opp DNS, den setter serveren som primary DNS og defautl gateway som nr2.*
+```
 Set-DnsClientServerAddress -InterfaceAlias $Interface -ServerAddresses $ServerIp, $DefautlGateway
 ```
