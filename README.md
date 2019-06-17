@@ -1,3 +1,8 @@
+# Fagprøve IKT 2019
+![Forside](https://proxy.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.kinyu-z.net%2Fdata%2Fwallpapers%2F59%2F907086.jpg&f=1)
+
+---
+
 # Viktig og huske på:
 
 Vedrørende fagprøven:
