@@ -34,7 +34,7 @@ Set-DnsClientServerAddress -InterfaceAlias $Interface -ResetServerAddresses
 ```
 
 *Setter ny ip adresse til serveren med valgt IP fra variablen over kalt, ServerIp.*
-*Get-NetAdapter er nødvendig for å finne ut index nummeret som er tilknyttet ethernet kabelen*
+*Get-NetAdapter er nødvendig for å finne ut index nummeret som er tilknyttet.ethernet tilkoblingen*
 *Man kan finne den manuelt også ved å bruke netsh interface ipv4 show interfaces i cmd f.eks*
 ```
 New-NetIPAddress –IPAddress $ServerIp -DefaultGateway $DefautlGateway -PrefixLength 24 -InterfaceIndex (Get-NetAdapter).InterfaceIndex
@@ -47,5 +47,46 @@ Set-DnsClientServerAddress -InterfaceAlias $Interface -ServerAddresses $ServerIp
 
 ---
 
-## Section Name ##
+## OPPSETT AV ROLES AND FEATURES! ##
+
+*Get-WindowsFeature viser alle mulige features man kan installere.*
+*Grep funker selvsagt ikke i windows powershell men man kan få samme funksjonalitet med pipes ved og bruke*
+*Get-WindowsFeature | findstr -i Installed, denne kommandoen vil vise alt som er installert på serveren i en liste.*
+
+#### Oppsett av AD domain services ####
+Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
+
+#Denne viser de forskjellige modulene som tilhører ADDSDeployment
+#Get-Command -Module ADDSDeployment
+
+$DomeneNavn = Read-Host -Prompt "Skriv inn ønsket domenenavn?"
+
+Install-ADDSForest -DomainName $DomeneNavn
+Install-ADDSDomainController -InstallDns -Credential (Get-Credential) -DomainName $DomeneNavn
+
+
+#Kommando for og sjekke om pc-er er blitt innmeldt i domene. Husk og bruk * på spørsmål om filter dette vil vise alle.
+#get-ADComputer | Format-Table DNSHostName, Enabled, Name, SamAccountName
+
+#Kommando for sjekk at DNS er installert
+#Get-WindowsFeature | where {($_.name -like “DNS”)}
+
+
+#Selv
+Install-WindowsFeature DHCP -IncludeManagementTools
+
+netsh dhcp add securitygroups
+
+
+#Konfigurasjon av DHCP:
+$ScopeNavn = Read-Host -Prompt "Hva ønsker du og kalle DHCP skopet?"
+$IpStartScope = Read-Host -Prompt "Hvilken IP addresse skal DHCP serveren starte på?"
+$IpEndScope = Read-Host -Prompt "Hvilken IP addresse skal DHCP serveren slutte på?"
+
+#Prøv og finn ut en måte og manipuler scope stringen til å bli det samme som DNS serveren bare med 0 på slutten.
+Add-DHCPServerv4Scope -Name $ScopeNavn -StartRange $IpStartScope -EndRange $IpEndScope -SubnetMask 255.255.255.0 -State Active
+Set-DhcpServerv4Scope -ScopeId 192.168.1.0 -LeaseDuration 1.00:00:00
+Set-DHCPServerv4OptionValue -ScopeID 192.168.1.0 -DnsDomain $Domenenavn -DnsServer 127.0.0.1 -Router 192.168.1.1
+
+
 
