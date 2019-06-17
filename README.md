@@ -70,6 +70,9 @@ klientmaskinene og meldt de inn i AD mens server installasjonen pågår og derme
 ```{PowerShell}
 $ServerName = Read-Host -Prompt 'Skriv inn ønsket server navn'
 Rename-Computer -NewName $ServerName
+{% codeblock %}
+$Interface = "Ethernet"
+{% endcodeblock %}
 
 #Variabler for setting av IP addresser.
 $Interface = "Ethernet"
