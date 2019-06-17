@@ -10,10 +10,13 @@ ikke hadde desktop enviroment installert.
 Fordelene med og bruke skript kontra GUI er at jeg kunne konsentrert meg mer om og installert
 klientmaskinene og meldt de inn i AD mens server installasjonen pågår og dermed spare tid og bli mye mer konkuransedyktig.
 
----
-## Skript som kjøres Etter ren installasjon  ##
+Disse ville selvfølgelig ikke vært på github men lagret som i ps1 format slik at jeg kunne kjøre hele eller deler av skriptet
+i powershell ISE.
 
-##### For og bytte navn på serveren. #####
+---
+## Skript som kjøres etter ren installasjon  ##
+
+##### Bytte navn på serveren. #####
 ```{PowerShell}
 $ServerName = Read-Host -Prompt 'Skriv inn ønsket server navn'
 Rename-Computer -NewName $ServerName
@@ -27,19 +30,18 @@ $DefautlGateway = Read-Host -Prompt "Hva er IP addressen til default gateway?"
 ```
 
 ##### Dette er for og fjerne gammel konfigurasjon, om dette er en helt ny server er ikke disse 3 linjene nødvendig. #####
-
 ```
 Remove-NetRoute -InterfaceAlias $Interface -AddressFamily IPv4
 Set-NetIPInterface -InterfaceAlias $Interface -Dhcp Enabled -AddressFamily IPv4
 Set-DnsClientServerAddress -InterfaceAlias $Interface -ResetServerAddresses
 ```
 ##### Denne kommandoen setter ny IP addresse til serveren med IP hentet fra variablen $ServerIP #####
-
 ```
 New-NetIPAddress –IPAddress $ServerIp -DefaultGateway $DefautlGateway -PrefixLength 24 \\
 -InterfaceIndex (Get-NetAdapter).InterfaceIndex
 ```
-*(Get-NetAdapter er nødvendig for å finne ut index nummeret som er tilknyttet ethernet tilkoblingen. Man kan finne den manuelt også ved å bruke mer primitive verktøy som netsh ipv4 show interfaces i cmd f.eks)*
+*(Get-NetAdapter er nødvendig for å finne ut index nummeret som er tilknyttet ethernet tilkoblingen. Man kan finne den manuelt også ved å bruke mer primitive verktøy som netsh ipv4 show interfaces i cmd f.eks. Koden ble delt opp
+for og bli lettere og lese.)*
 
 ##### Denne linjen setter opp DNS, den setter serveren som primary DNS og defautl gateway som nr2. #####
 ```
@@ -50,21 +52,24 @@ Set-DnsClientServerAddress -InterfaceAlias $Interface -ServerAddresses $ServerIp
 
 ## OPPSETT AV ROLES AND FEATURES! ##
 
-*Get-WindowsFeature viser alle mulige features man kan installere.*
+*Get-WindowsFeature viser alle mulige roller & features man kan installere.*
 *Grep funker selvsagt ikke i windows powershell men man kan få samme funksjonalitet med pipes ved og bruke*
 *Get-WindowsFeature | findstr -i Installed, denne kommandoen vil vise alt som er installert på serveren i en liste.*
 
-#### Oppsett av AD domain services ####
+#### Installasjon av AD domain services ####
+```
 Install-WindowsFeature -Name AD-Domain-Services -IncludeManagementTools
+```
 
-#Denne viser de forskjellige modulene som tilhører ADDSDeployment
-#Get-Command -Module ADDSDeployment
+*Denne viser de forskjellige modulene som tilhører ADDSDeployment
+Get-Command -Module ADDSDeployment*
 
+##### For og installere AD-DC og legge til serveren i en ny skog med gitt domenenavn #####
+```
 $DomeneNavn = Read-Host -Prompt "Skriv inn ønsket domenenavn?"
-
 Install-ADDSForest -DomainName $DomeneNavn
 Install-ADDSDomainController -InstallDns -Credential (Get-Credential) -DomainName $DomeneNavn
-
+```
 
 #Kommando for og sjekke om pc-er er blitt innmeldt i domene. Husk og bruk * på spørsmål om filter dette vil vise alle.
 #get-ADComputer | Format-Table DNSHostName, Enabled, Name, SamAccountName
