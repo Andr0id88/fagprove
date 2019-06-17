@@ -1,12 +1,17 @@
 # Automatisere prosessen
 
+![Powershell]("https://i0.wp.com/blogit.create.pt/wp-content/uploads/2017/02/powershell-cim_1.jpg?fit=1118%2C628&ssl=1")
+
 Hvis dette var mitt levebrød og noe jeg hadde gjort dag ut og dag inn hadde jeg i såfall denne prosessen.
-Laget noen eksempel skript som jeg tenker kunne gjort at denne server installasjonen hadde tatt **mye** kortere tid en
-og gjøre alt manuelt gjennom GUI. Powershell hadde også vært nødvendig om serveren bedriften ga meg i oppdrag og installere
+Under er noen eksempel skript som jeg mener kunne gjort at denne server installasjonen hadde tatt **mye** kortere tid.
+
+Powershell hadde også vært nødvendig om serveren bedriften ga meg i oppdrag og installere
 ikke hadde desktop enviroment installert.
 
 Fordelene med og bruke skript kontra GUI er at jeg kunne konsentrert meg mer om og installert
 klientmaskinene og meldt de inn i AD mens server installasjonen pågår og dermed spare tid og bli mye mer konkuransedyktig.
+
+---
 
 ### Etter ren installasjon:
 
