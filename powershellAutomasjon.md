@@ -32,7 +32,8 @@ Remove-NetRoute -InterfaceAlias $Interface -AddressFamily IPv4
 Set-NetIPInterface -InterfaceAlias $Interface -Dhcp Enabled -AddressFamily IPv4
 Set-DnsClientServerAddress -InterfaceAlias $Interface -ResetServerAddresses
 ```
-##### Denne kommandoen setter ny IP addresse til serveren med IP tatt fra variablen $ServerIP som brukeren skriver inn når kode snippeten kjøres. Get-NetAdapter er nødvendig for å finne ut index nummeret som er tilknyttet ethernet tilkoblingen. Man kan finne den manuelt også ved å bruke mer primitive verktøy som netsh ipv4 show interfaces i cmd f.eks #####
+##### Denne kommandoen setter ny IP addresse til serveren med IP tatt fra variablen $ServerIP som brukeren skriver inn når skriptet kjøres.
+*Get-NetAdapter er nødvendig for å finne ut index nummeret som er tilknyttet ethernet tilkoblingen. Man kan finne den manuelt også ved å bruke mer primitive verktøy som netsh ipv4 show interfaces i cmd f.eks
 
 ```
 New-NetIPAddress –IPAddress $ServerIp -DefaultGateway $DefautlGateway -PrefixLength 24 \\
