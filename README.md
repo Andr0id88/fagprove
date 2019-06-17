@@ -70,14 +70,15 @@ klientmaskinene og meldt de inn i AD mens server installasjonen pågår og derme
 ```{PowerShell}
 $ServerName = Read-Host -Prompt 'Skriv inn ønsket server navn'
 Rename-Computer -NewName $ServerName
-{% codeblock %}
-$Interface = "Ethernet"
-{% endcodeblock %}
+```
 
-#Variabler for setting av IP addresser.
+{% codeblock IPV4 lang:PowerShell URL link_text %}
 $Interface = "Ethernet"
 $ServerIp = Read-Host -Prompt "Hvilken IP ønsker du at serveren skal ha?"
 $DefautlGateway = Read-Host -Prompt "Hva er IP addressen til default gateway?"
+{% endcodeblock %}
+
+#Variabler for setting av IP addresser.
 
 #Dette er for og fjerne gammel konfigurasjon, om dette er en helt ny server er ikke disse 3 linjene nødvendig.
 Remove-NetRoute -InterfaceAlias $Interface -AddressFamily IPv4
