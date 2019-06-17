@@ -32,7 +32,7 @@ Her skal det dokumenteres hvilket utstyr som er brukt under avlegging av fagprø
 - To tastatur til klientmaskiner
 - 1 minnepenn med driver til skriver og chrome
 - 3 skjermer til klientmaskiner
-- SOHO ruter fra ASUS (modelnavn ++)
+- SOHO ruter[^1] fra ASUS (modelnavn ++)
 
 Lisensnøkkel til Windows server 2012 Foundation ble anskaffet ved å ringe Torgeir Mørk 2019-06-17.
 
@@ -51,11 +51,15 @@ Jeg koblet i tillegg en bærbar maskin med nettverkskabel i ruteren for og kunne
 Teknikkerpc-en er installert med Arch Linux og har programvare slik som Wireshark for lettere kunne avdekke eventuelle nettverks problemer.
 Samt alt av unix verktøy som jeg er godt kjent med fra før.
 
-*Klientmaskine*
+==Klientmaskin==
+
+Klientmaskin
+Klientmaskin
 
 ## Begreper
 
-- SOHO ruter
+- [^1]:SOHO ruter
+
 *Small office home office ruter*
 Dette er en betegnelse for en ruter som også har en del andre tilleggsfunksjoner slik som større bedrifter har oppdelt i flere enheter.
 Den inneholder en ruter som ruter traffikken inn & ut av ip skopet til nettverket.
