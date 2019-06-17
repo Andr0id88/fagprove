@@ -75,7 +75,9 @@ klientmaskinene og meldt de inn i AD mens server installasjonen pågår og derme
     // it's useful to put the ```powershell code
     // before the plain text command exectution output
 ```{PowerShell}
-{{ServerName = Read-Host -Prompt 'Skriv inn ønsket server navn'
+{{
+#For og bytte navn på serveren.
+ServerName = Read-Host -Prompt 'Skriv inn ønsket server navn'
 Rename-Computer -NewName $ServerName}}
 ```
 
