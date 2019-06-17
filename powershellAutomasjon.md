@@ -11,7 +11,7 @@ Fordelene med og bruke skript kontra GUI er at jeg kunne konsentrert meg mer om 
 klientmaskinene og meldt de inn i AD mens server installasjonen pågår og dermed spare tid og bli mye mer konkuransedyktig.
 
 ---
-## Etter ren installasjon  ##
+## Skript som kjøres Etter ren installasjon  ##
 
 ##### For og bytte navn på serveren. #####
 ```{PowerShell}
@@ -19,7 +19,7 @@ $ServerName = Read-Host -Prompt 'Skriv inn ønsket server navn'
 Rename-Computer -NewName $ServerName
 ```
 
-##### Variabler for setting av IP addresser. #####
+##### Variabler der IP addresser skrives inn av bruker. #####
 ```
 $Interface = "Ethernet"
 $ServerIp = Read-Host -Prompt "Hvilken IP ønsker du at serveren skal ha?"
@@ -39,10 +39,9 @@ Set-DnsClientServerAddress -InterfaceAlias $Interface -ResetServerAddresses
 New-NetIPAddress –IPAddress $ServerIp -DefaultGateway $DefautlGateway -PrefixLength 24 \\
 -InterfaceIndex (Get-NetAdapter).InterfaceIndex
 ```
-
 *(Get-NetAdapter er nødvendig for å finne ut index nummeret som er tilknyttet ethernet tilkoblingen. Man kan finne den manuelt også ved å bruke mer primitive verktøy som netsh ipv4 show interfaces i cmd f.eks)*
 
-*Denne linjen setter opp DNS, den setter serveren som primary DNS og defautl gateway som nr2.*
+##### Denne linjen setter opp DNS, den setter serveren som primary DNS og defautl gateway som nr2. #####
 ```
 Set-DnsClientServerAddress -InterfaceAlias $Interface -ServerAddresses $ServerIp, $DefautlGateway
 ```
