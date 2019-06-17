@@ -41,9 +41,13 @@ osv....
 ## Oppsett av arbeidsplass og utstyr
 
 Etter opptelling av utstyr startet jeg med og sette sammen utstyret jeg har fått tildelt.
-Klientmaskiner ble satt opp som arbeidsstasjoner med tilkoblet mus, tastatur, skjerm og nettverkskabel som er koblet i SOHO ruteren, strømkabel til PSU.
-Serveren ble tilkoblet på samme måte.
-Switch ble koblet til strøm samt ble det satt en nettverkskabel fra switchen til veggen, veggkontakten var tilkoblet port 22 på patchpanelet som gikk til port 18 på switchen. Denne switchen var untagget på VLAN 1 som er vårt server VLAN. Dette VLAN-et har ikke DHCP men det hadde ikke gjort noe om det hadde det siden mitt nett vil NAT'es gjennom ruter uansett og ikke bli *forstyrret* av ting som er satt opp bak ruteren min.
+Klientmaskiner ble satt opp som arbeidsstasjoner med tilkoblet mus, tastatur, skjerm, strømkabel til PSU og nettverkskabel som er koblet i SOHO ruteren, Serveren ble tilkoblet på samme måte.
+
+Switch ble koblet til strøm samt ble det koblet en nettverkskabel fra uplink porten på switchen til veggen, veggkontakten var tilkoblet port 22 på patchpanelet som gikk til port 18 på switchen. Denne switchen var untagget på VLAN 1 som er vårt server VLAN. Dette VLAN-et har ikke DHCP men det hadde ikke gjort noe om det hadde det siden mitt nett vil NAT'es gjennom ruter uansett og ikke bli *forstyrret* av ting som er satt opp bak ruteren min.
+
+Jeg koblet i tillegg en bærbar maskin med nettverkskabel i ruteren for og kunne feilsøke på eventuelle problemer som kunne oppstå underveis.
+Teknikkerpc-en er installert med Arch Linux og har programvare slik som Wireshark for lettere kunne avdekke eventuelle nettverks problemer.
+Samt alt av unix verktøy som jeg er godt kjent med fra før.
 
 ## Begreper
 
