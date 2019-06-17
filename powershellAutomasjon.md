@@ -7,7 +7,7 @@ Under er noen eksempel skript som jeg mener kunne gjort at denne server installa
 Powershell hadde også vært nødvendig om serveren bedriften ga meg i oppdrag og installere
 ikke hadde desktop enviroment installert.Fordelene med og bruke skript kontra GUI er at jeg kunne konsentrert meg mer om andre arbeidsoppgaver mens server installasjonen pågår og dermed spare tid og bli mye mer konkuransedyktig.
 
-*Disse ville selvfølgelig ikke vært på github men lagret som i ps1 format slik at jeg kunne kjøre hele eller deler av skriptet i powershell ISE.
+*Disse ville selvfølgelig ikke vært på github men lagret som i ps1 format slik at jeg kunne kjøre hele eller deler av skriptet i powershell ISE.*
 
 ---
 ## Skript som kjøres etter ren installasjon  ##
