@@ -71,17 +71,9 @@ klientmaskinene og meldt de inn i AD mens server installasjonen pågår og derme
 
 ### Etter ren installasjon:
 
-    // one or more times, codesnippet
-    // it's useful to put the ```powershell code
-    // before the plain text command exectution output
 ```{PowerShell}
 #For og bytte navn på serveren.
 ServerName = Read-Host -Prompt 'Skriv inn ønsket server navn'
-Rename-Computer -NewName $ServerName
-```
-
-<code></code><code>PowerShell
-$ServerName = Read-Host -Prompt 'Skriv inn ønsket server navn'
 Rename-Computer -NewName $ServerName
 
 #Variabler for setting av IP addresser.
@@ -101,7 +93,8 @@ New-NetIPAddress –IPAddress $ServerIp -DefaultGateway $DefautlGateway -PrefixL
 
 # Denne linjen setter opp DNS, den setter serveren som primary DNS og defautl gateway som nr2.
 Set-DnsClientServerAddress -InterfaceAlias $Interface -ServerAddresses $ServerIp, $DefautlGateway
-</code><code></code>ommando for å bytte servernavn:
+```
+
 
 ---
 
