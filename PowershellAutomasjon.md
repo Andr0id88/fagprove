@@ -11,8 +11,7 @@ Fordelene med og bruke skript kontra GUI er at jeg kunne konsentrert meg mer om 
 klientmaskinene og meldt de inn i AD mens server installasjonen pågår og dermed spare tid og bli mye mer konkuransedyktig.
 
 ---
-
-### Etter ren installasjon:
+## Etter ren installasjon  ##
 
 *For og bytte navn på serveren.*
 ```{PowerShell}
@@ -48,5 +47,5 @@ Set-DnsClientServerAddress -InterfaceAlias $Interface -ServerAddresses $ServerIp
 
 ---
 
-## Testparagrah ##
+## Section Name ##
 
