@@ -69,7 +69,7 @@ og gjøre dette manuelt.
 Fordelene med og bruke skript kontra GUI er at da kunne jeg konsentrert meg med og installert
 klientmaskinene og meldt de inn i AD mens server installasjonen pågår og dermed spare tid og bli mye mer konkuransedyktig.
 
-'''ps1
+'''ps
 
 # For og bytte pc navn.
 #$ServerName = Read-Host -Prompt 'Skriv inn ønsket server navn'
