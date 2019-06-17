@@ -1,7 +1,7 @@
 # Automatisere server installasjon ved bruk av Powershell
 ![](https://i0.wp.com/blogit.create.pt/wp-content/uploads/2017/02/powershell-cim_1.jpg?fit=1118%2C628&ssl=1)
 
-Hvis dette var mitt levebrød og noe jeg hadde gjort dag ut og dag inn hadde jeg i såfall denne prosessen.
+Hvis dette var mitt levebrød og noe jeg hadde gjort dag ut og dag inn hadde jeg i såfall automatisert denne prosessen.
 Under er noen eksempel skript som jeg mener kunne gjort at denne server installasjonen hadde tatt **mye** kortere tid.
 
 Powershell hadde også vært nødvendig om serveren bedriften ga meg i oppdrag og installere
@@ -45,3 +45,8 @@ New-NetIPAddress –IPAddress $ServerIp -DefaultGateway $DefautlGateway -PrefixL
 ```
 Set-DnsClientServerAddress -InterfaceAlias $Interface -ServerAddresses $ServerIp, $DefautlGateway
 ```
+
+---
+
+## Testparagrah ##
+
