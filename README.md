@@ -31,7 +31,5 @@ Lisensnøkkel til Windows server 2012 Foundation ble anskaffet ved å ringe Torg
 
 osv....
 
-{% img test https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fo4rFX7OxFI4%2Fmaxresdefault.jpg&f=1 500 500 title_text alt_text %}
-
-
+![m'lady](https://i.imgur.com/v8IVDka.jpg)
 
