@@ -17,5 +17,21 @@ Vedrørende fagprøven:
 - Skriv at du gjemmer sensitive passord utenfor selve besvarelsedokumentet, men i et eget dokument. Ha dette som vedlegg.
 
 
-## Dokumentasjon til fagprøve 2019
+# Dokumentasjon til fagprøve 2019
+
+## Oversikt og oppstart
+
+Her skal det dokumenteres hvilket utstyr som er brukt under avlegging av fagprøven. Alt fra hvor mange nettverkskabler til hvor mange tastatur som er i bruk. Eksempel:
+
+- To tastatur til klientmaskiner
+- 1 minnepenn med driver til skriver og chrome
+- 3 skjermer til klientmaskiner
+
+Lisensnøkkel til Windows server 2012 Foundation ble anskaffet ved å ringe Torgeir Mørk 2019-06-17.
+
+osv....
+
+{% img test https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2Fo4rFX7OxFI4%2Fmaxresdefault.jpg&f=1 500 500 title_text alt_text %}
+
+
 
