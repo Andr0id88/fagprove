@@ -1,6 +1,5 @@
 # Automatisere prosessen
-
-![]("https://i0.wp.com/blogit.create.pt/wp-content/uploads/2017/02/powershell-cim_1.jpg?fit=1118%2C628&ssl=1")
+![]("https://proxy.duckduckgo.com/iu/?u=https%3A%2F%2Fi0.wp.com%2Fblogit.create.pt%2Fwp-content%2Fuploads%2F2017%2F02%2Fpowershell-cim_1.jpg%3Ffit%3D1118%252C628%26ssl%3D1&f=1")
 
 Hvis dette var mitt levebrød og noe jeg hadde gjort dag ut og dag inn hadde jeg i såfall denne prosessen.
 Under er noen eksempel skript som jeg mener kunne gjort at denne server installasjonen hadde tatt **mye** kortere tid.
