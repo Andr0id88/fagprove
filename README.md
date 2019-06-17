@@ -69,9 +69,8 @@ og gjøre dette manuelt.
 Fordelene med og bruke skript kontra GUI er at da kunne jeg konsentrert meg med og installert
 klientmaskinene og meldt de inn i AD mens server installasjonen pågår og dermed spare tid og bli mye mer konkuransedyktig.
 
-'''ps
-
-# For og bytte pc navn.
+### Etter ren installasjon:
+<code></code><code>PowerShell
 #$ServerName = Read-Host -Prompt 'Skriv inn ønsket server navn'
 #Rename-Computer -NewName $ServerName
 
@@ -92,9 +91,9 @@ New-NetIPAddress –IPAddress $ServerIp -DefaultGateway $DefautlGateway -PrefixL
 
 # Denne linjen setter opp DNS, den setter serveren som primary DNS og defautl gateway som nr2.
 Set-DnsClientServerAddress -InterfaceAlias $Interface -ServerAddresses $ServerIp, $DefautlGateway
+</code><code></code>ommando for å bytte servernavn:
 
-'''
-
+---
 
 ## Begreper
 
