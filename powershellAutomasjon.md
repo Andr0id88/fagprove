@@ -7,7 +7,7 @@ Under er noen eksempel skript som jeg mener kunne gjort at denne server installa
 Powershell hadde også vært nødvendig om serveren bedriften ga meg i oppdrag og installere
 ikke hadde desktop enviroment installert.Fordelene med og bruke skript kontra GUI er at jeg kunne konsentrert meg mer om andre arbeidsoppgaver mens server installasjonen pågår og dermed spare tid og bli mye mer konkuransedyktig.
 
-*Disse ville selvfølgelig ikke vært på github men lagret som i ps1 format slik at jeg kunne kjøre hele eller deler av skriptet i powershell ISE.*
+*Disse ville selvfølgelig ikke vært på github men lagret som ps1 format slik at jeg kunne kjøre hele eller deler av skriptet i powershell ISE fra en minnepenn eller skylagringstjeneste.*
 
 ---
 ## Skript som kjøres etter ren installasjon  ##
@@ -87,8 +87,10 @@ netsh dhcp add securitygroups
 $ScopeNavn = Read-Host -Prompt "Hva ønsker du og kalle DHCP skopet?"
 $IpStartScope = Read-Host -Prompt "Hvilken IP addresse skal DHCP serveren starte på?"
 $IpEndScope = Read-Host -Prompt "Hvilken IP addresse skal DHCP serveren slutte på?"
-Add-DHCPServerv4Scope -Name $ScopeNavn -StartRange $IpStartScope -EndRange $IpEndScope -SubnetMask 255.255.255.0 -State Active
+Add-DHCPServerv4Scope -Name $ScopeNavn -StartRange $IpStartScope -EndRange $IpEndScope \\
+-SubnetMask 255.255.255.0 -State Active
 Set-DhcpServerv4Scope -ScopeId 192.168.1.0 -LeaseDuration 1.00:00:00
-Set-DHCPServerv4OptionValue -ScopeID 192.168.1.0 -DnsDomain $Domenenavn -DnsServer 127.0.0.1 -Router 192.168.1.1
+Set-DHCPServerv4OptionValue -ScopeID 192.168.1.0 \\
+-DnsDomain $Domenenavn -DnsServer 127.0.0.1 -Router 192.168.1.1
 ```
 
