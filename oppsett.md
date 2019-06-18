@@ -1,6 +1,6 @@
 # Oppskrift:
 
-Installer server på en ren installasjon med cd key: XXNPP-JRHCB-4VD4C-J9Y47-7QVJY
+Installer server på en ren installasjon med cd key:
 Denne nøkkelen er til server 2012 R2 datacenter, den lisensen jeg egentlig skulle brukt er; windows server 2012 R2 foundation.
 Bruk elev-pcer som klienmaskiner, det er viktig og huske og melde de inn i rett domene når serveren er satt opp.
 
