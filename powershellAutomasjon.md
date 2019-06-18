@@ -2,7 +2,7 @@
 ![](https://i0.wp.com/blogit.create.pt/wp-content/uploads/2017/02/powershell-cim_1.jpg?fit=1118%2C628&ssl=1)
 
 Hvis dette var mitt levebrød og noe jeg hadde gjort dag ut og dag inn hadde jeg i såfall automatisert denne prosessen.
-Under er noen eksempel skript som jeg mener kunne gjort at denne server installasjonen hadde tatt **mye** kortere tid.
+Under er noen eksempel skript som jeg mener hadde gjort at denne server installasjonen hadde tatt **mye** kortere tid.
 
 Powershell hadde også vært nødvendig om serveren bedriften ga meg i oppdrag og installere
 ikke hadde desktop enviroment installert.Fordelene med og bruke skript kontra GUI er at jeg kunne konsentrert meg mer om andre arbeidsoppgaver mens server installasjonen pågår og dermed spare tid og bli mye mer konkuransedyktig.
@@ -39,7 +39,7 @@ New-NetIPAddress –IPAddress $ServerIp -DefaultGateway $DefautlGateway -PrefixL
 *(Get-NetAdapter er nødvendig for å finne ut index nummeret som er tilknyttet ethernet tilkoblingen. Man kan finne den manuelt også ved å bruke mer primitive verktøy som netsh ipv4 show interfaces i cmd f.eks. Koden ble delt opp
 for og bli lettere og lese.)*
 
-##### Denne linjen setter opp DNS, den setter serveren som primary DNS og defautl gateway som nr2. #####
+##### Denne kommandoen setter opp DNS, den setter serveren som primary DNS og default gateway som secondary. #####
 ```
 Set-DnsClientServerAddress -InterfaceAlias $Interface -ServerAddresses $ServerIp, $DefautlGateway
 ```

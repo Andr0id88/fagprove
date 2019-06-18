@@ -33,6 +33,7 @@ Her skal det dokumenteres hvilket utstyr som er brukt under avlegging av fagprø
 - 1 minnepenn med driver til skriver og chrome
 - 3 skjermer til klientmaskiner
 - SOHO ruter[^1] fra ASUS (modelnavn ++)
+[^Test]
 
 Lisensnøkkel til Windows server 2012 Foundation ble anskaffet ved å ringe Torgeir Mørk 2019-06-17.
 
@@ -55,11 +56,8 @@ Samt alt av unix verktøy som jeg er godt kjent med fra før.
 
 ---
 
-
----
-
 ## Begreper
-
+[^Test]:Testing footnotes
 - SOHO ruter
 
 *Small office home office ruter*
