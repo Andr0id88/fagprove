@@ -109,8 +109,9 @@ $DC1, $DC2 = $Domain.split('.')
 $DcPath = "DC="+$DC1 + "," + "DC="+$DC2
 
 $Gruppenavn = Read-Host -Prompt "Skriv inn navn på gruppen du ønsker og legge til:"
-$Description = Read-Host -Prompt "Ønsker du og legge til en description for gruppen? Hvis ikke trykk enter..."
-New-ADGroup -GroupScope Global -GroupCategory Security -Name $Gruppenavn -Description $Description -Path "ou=grupper,dc=$DC1,dc=$DC2"
+$Description = Read-Host -Prompt "Skriv inn en description til gruppen"
+New-ADGroup -GroupScope Global -GroupCategory Security -Name $Gruppenavn `
+-Description $Description -Path "ou=grupper,dc=$DC1,dc=$DC2"
 ```
 *Mulighet for å bruke andre OU om man lager en variabel for det eller hardkoder det inn hvis det er behov, i mitt eksempel holder det med ett OU for grupper.*
 
@@ -121,13 +122,11 @@ $Domain = $env:USERDNSDOMAIN
 $DC1, $DC2 = $Domain.split('.')
 $DcPath = "DC="+$DC1 + "," + "DC="+$DC2
 
-
 $Fornavn = Read-Host -Prompt "Skriv inn fornavn"
 $Etternavn = Read-Host -Prompt "Skriv inn etternavn"
 $Grupper = Read-Host -Prompt "Hvilken gruppe skal brukeren være medlemm av?"
 $FultNavn = $Fornavn + " " + $Etternavn
 $BrukerNavn = $Fornavn.SubString(0,3) + $Etternavn.SubString(0,3)
-
 
 New-ADUser -Name $FultNavn -GivenName $Fornavn -Surname $Etternavn -DisplayName "$FultNavn" -UserPrincipalName "$BrukerNavn@kolos.local" -SamAccountName "$BrukerNavn" -Path "OU=Brukere,$DcPath"  -AccountPassword(Read-Host -AsSecureString "Input Password") -Enabled $true -HomeDirectory "\\$env:computername\%username%" -HomeDrive "W:"
 Add-ADGroupMember -Identity "$Grupper" -Member $BrukerNavn
