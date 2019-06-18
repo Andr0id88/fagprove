@@ -100,9 +100,9 @@ Set-DHCPServerv4OptionValue -ScopeID 192.168.1.0 `
 $OU = Read-Host -Prompt "Skriv inn navn på OU du ønsker og legge til:"
 New-ADOrganizationalUnit -Name $OU
 ```
-*I mitt eksempel ville jeg lagt til gruppene, grupper, brukere*
+*I mitt eksempel ville jeg lagt til OU-ene, grupper, brukere*
 
-##### Legg til brukere #####
+##### Legg til grupper #####
 ```
 $Domain = $env:USERDNSDOMAIN
 $DC1, $DC2 = $Domain.split('.')
@@ -114,7 +114,7 @@ New-ADGroup -GroupScope Global -GroupCategory Security -Name $Gruppenavn -Descri
 ```
 *Mulighet for å bruke andre OU om man lager en variabel for det eller hardkoder det inn hvis det er behov, i mitt eksempel holder det med ett OU for grupper.*
 
-*Lage bruker med navn fra variablene over*
+##### Legg til brukere #####
 
 ```
 $Domain = $env:USERDNSDOMAIN
