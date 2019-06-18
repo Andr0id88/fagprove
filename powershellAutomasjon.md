@@ -33,7 +33,7 @@ Set-DnsClientServerAddress -InterfaceAlias $Interface -ResetServerAddresses
 ```
 ##### Denne kommandoen setter ny IP addresse til serveren med IP hentet fra variablen $ServerIP #####
 ```
-New-NetIPAddress –IPAddress $ServerIp -DefaultGateway $DefautlGateway -PrefixLength 24 \\
+New-NetIPAddress –IPAddress $ServerIp -DefaultGateway $DefautlGateway -PrefixLength 24 `
 -InterfaceIndex (Get-NetAdapter).InterfaceIndex
 ```
 *(Get-NetAdapter er nødvendig for å finne ut index nummeret som er tilknyttet ethernet tilkoblingen. Man kan finne den manuelt også ved å bruke mer primitive verktøy som netsh ipv4 show interfaces i cmd f.eks. Koden ble delt opp
@@ -67,8 +67,8 @@ Install-ADDSForest -DomainName $DomeneNavn
 Install-ADDSDomainController -InstallDns -Credential (Get-Credential) -DomainName $DomeneNavn
 ```
 
-*Det kan være lurt og teste ut om alt har fungerte ved å prøve og melde inn en pc i domenet. For og sjekke om pc-er er blitt innmeldt i domene kan man
-skrive get-ADComputer | Format-Table DNSHostName, Enabled, Name, SamAccountName. Når spørsmål om filter kommer opp velger man * som betyr vis alle.
+*Det kan være lurt og teste ut om alt har fungerte ved å prøve og melde inn en pc i domenet. For og sjekke om pc-er er blitt innmeldt i domene kan man*
+*skrive get-ADComputer | Format-Table DNSHostName, Enabled, Name, SamAccountName. Når spørsmål om filter kommer opp velger man * som betyr vis alle.*
 ```
 get-ADComputer | Format-Table DNSHostName, Enabled, Name, SamAccountName
 ```
