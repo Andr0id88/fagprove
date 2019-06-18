@@ -128,7 +128,10 @@ $Grupper = Read-Host -Prompt "Hvilken gruppe skal brukeren være medlemm av?"
 $FultNavn = $Fornavn + " " + $Etternavn
 $BrukerNavn = $Fornavn.SubString(0,3) + $Etternavn.SubString(0,3)
 
-New-ADUser -Name $FultNavn -GivenName $Fornavn -Surname $Etternavn -DisplayName "$FultNavn" -UserPrincipalName "$BrukerNavn@kolos.local" -SamAccountName "$BrukerNavn" -Path "OU=Brukere,$DcPath"  -AccountPassword(Read-Host -AsSecureString "Input Password") -Enabled $true -HomeDirectory "\\$env:computername\%username%" -HomeDrive "W:"
+New-ADUser -Name $FultNavn -GivenName $Fornavn -Surname $Etternavn -DisplayName "$FultNavn" `
+-UserPrincipalName "$BrukerNavn@kolos.local" -SamAccountName "$BrukerNavn" `
+-Path "OU=Brukere,$DcPath"  -AccountPassword(Read-Host -AsSecureString "Input Password") `
+-Enabled $true -HomeDirectory "\\$env:computername\%username%" -HomeDrive "W:"
 Add-ADGroupMember -Identity "$Grupper" -Member $BrukerNavn
 ```
 
