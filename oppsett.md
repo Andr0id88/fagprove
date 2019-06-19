@@ -127,13 +127,17 @@ I min installasjon trenger jeg roller for:
 
 ## Hjem Mapper
 - Disse fungerer litt på samme måte som Shares og lages på samme måte, men trengs litt konfigurering.
-- Først lag en mappe med navn Home på Datadisken
+- Først lag en mappe med navn Home på Privat partisjon.
 - Høyreklikk og velg share with spesific people, legg til Domain Users i denne listen og sørg for at de har lestetilgang ikke noe mer.
 - Med tanke på personvern fjernes ALLE andre en bruker selv for lese tilgang på privatmappen.
 - Det må derfor settes opp data kvoter slik at ikke 1 enkelt bruker kan fylle opp plassen på disken slik at ingen andre får tilgang til å lagre data
 på sitt hjemområde. Siden ikke domain admin har tilgang til mappen heller for å gå inn og fjerne unødvendig data må kvoter taes i bruk!
 
 ## Datakvoter på hjemområde
+- For og sette opp kvoter på hjemområde, åpne server manager, på venstre side åpner du File and Storage Services.
+- Gå så til Shares, da vil du se på høyre side ett lite vindu der det står quota. For å kunne gjøre endringer hær må man installere rollen, File Server Resource Manager. Gjør dette ved å trykke på linken.
+- Når denne er installert kan vi konfigurere oppsettet av kvoter på hjemmeområdene.
+#Skriver mer om dette i morgen 2019-06-20
 
 ## Policies
 
