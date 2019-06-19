@@ -109,17 +109,28 @@ I min installasjon trenger jeg roller for:
 
 ## Shares
 - Legg til en mappe på egen disk kalt det du vil den skal være, f.eks Felles, Applikasjoner, Home osv.
-- Høyreklikk på mappen og velg share with spesific people, her fjerner du alle og velger everyone.
-- Når du har gjort det høyreklikker du en gang til på mappen og velger properties og går til security.
-- Hær kan vi trykke på edit for å legge til grupper som skal ha rettigheter til mappen, for og gi forskjellige rettigheter krysser man av boksene for f.eks lese, skrive, tilganger.
-- Når du skal teste sharet er det VIKTIG! og bruke \\servernavnet\Felles f.eks, IKKE FQDN navnet som kan være f.eks kolos.local\Felles.
-- Deretter kan man bruke GPO til å pushe disse ut til klientmaskinene.
+- I mitt tillfelle la jeg disse mappene på egen partion som fikk bokstaven W.
+- Åpne Group Policy manager fra server managers under tools.
+- Gå til User Configuration, prefrences, Windows settings, Drive Maps.
+- Høyreklikk velg new mapped drive, skriv inn lokasjonen til plasseringen, i mitt tilfelle ble dette \\Server1\Data
+- Merk av for reconnect, label as f.eks Felles.
+- Velg stasjonsbokstav (drive letter) for dette sharet i mitt tilfelle valgte jeg W.
+- Nederst merker man av for "Hide\Show this drive" til Show this drive(på begge)
+- Deretter skal disken vises i min datamaskin hos brukerene.
+- Det er nå viktig og sette rettigheter\restriksjoner på de forskjellige mappene som Data disken inneholder.
+- Dette gjøres ved og gå til mappene som vi laget i punkt 1 å høyreklikke på disse velge properties og så security.
+- Man legger da til grupper som kan se\modifisere\kjøre filer f.eks.
+- For at dette skal fungere er det EKSTREMT VIKTIG og kjøre gpupdate /force i CMD!
 
 ## Hjem Mapper
 - Disse fungerer litt på samme måte som Shares og lages på samme måte, men trengs litt konfigurering.
 - Først lag en mappe med navn Home på Datadisken
 - Høyreklikk og velg share with spesific people, legg til Domain Users i denne listen og sørg for at de har lestetilgang ikke noe mer.
--
+- Med tanke på personvern fjernes ALLE andre en bruker selv for lese tilgang på privatmappen.
+- Det må derfor settes opp data kvoter slik at ikke 1 enkelt bruker kan fylle opp plassen på disken slik at ingen andre får tilgang til å lagre data
+på sitt hjemområde. Siden ikke domain admin har tilgang til mappen heller for å gå inn og fjerne unødvendig data må kvoter taes i bruk!
+
+## Datakvoter på hjemområde
 
 ## Policies
 
