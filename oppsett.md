@@ -77,8 +77,13 @@ I min installasjon trenger jeg roller for:
 - Husk og oppgrader serveren til Domain Controller, dette gjøres ved å trykke på utropstegnet øverst i server manageren!
 - Dette er fordi at da settes DNS opp automatisk slik at man slipper og gjøre det selv.
 
+## OU og grupper
+- Først legg til OU med navn grupper og ett med navn brukere
+- Legg så til grupper alt ettersom hva oppgaven sier
+
 ## Brukere
--
+- Kjør legg til brukere powershell script
+- Dobbeltsjekk at brukerne er blitt lagt inn i rett grupper.
 
 ## DHCP
 - Legg til DHCP fra add roles and features.
@@ -90,9 +95,17 @@ I min installasjon trenger jeg roller for:
 - Dette gjør at jeg får frigjort IP addresser fra 192.168.1.3 192.168.100
 
 ## Print and document services
-- Installer priter med driver først slik at den kan legges til senere med GPO.
-- For video på GPO: Windows server 2012 - How to Deploy Network Printer by using GPO.
-- Prøv dette først uten video i morgen 2019-06-14
+- Installer printer driver fra USB penn slik at den kommer opp i listen senere.
+- Åpne Tools & Print Management
+- Gå til Printer servers, printers, høyreklikk og legg til printer.
+- Søk på nettverket etter skriver eller skriv inn IP addressen direkte.
+- Legg til driver skriver som ble installert fra exe fil på usb penn tidligere(den skal nå være i listen kalt EPSON)
+### Push ut skriver med GPO
+- Høyreklikk på skriver og velg Deploy with group policy
+- Browse, og høyreklikk og lag en ny policy kalt Printer & velg denne og trykk OK.
+- Kryss av for "The computer that this GPO applies to (per machine)" og trykk Add.
+
+*For video på GPO: Windows server 2012 - How to Deploy Network Printer by using GPO.*
 
 ## Shares
 - Legg til en mappe på egen disk kalt det du vil den skal være, f.eks Felles, Applikasjoner, Home osv.
@@ -107,3 +120,22 @@ I min installasjon trenger jeg roller for:
 - Først lag en mappe med navn Home på Datadisken
 - Høyreklikk og velg share with spesific people, legg til Domain Users i denne listen og sørg for at de har lestetilgang ikke noe mer.
 -
+
+## Policies
+
+###Account Policies
+
+####Passord####
+- Det kan være greit og gå igjennom passord policies, man trenger ikke lage ny policy det eksisterer allerede en policy som heter Default Domain Policy velg denne og trykk edit
+- Du finner passord policies under Policies,Windows Settings, Security Settings, Account Policies.
+- Sett maximum password age til 90 days
+- Minimum Passwordlength til 10
+- Resten kan stå som default
+
+####Account Lockout Policy####
+- Sett account lockout threshold til 5
+- Account lockout duration + reset account lockout counter after: til 15 min.
+
+
+
+###
