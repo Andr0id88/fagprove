@@ -53,19 +53,22 @@ Etter oppstart det første som må gjøres:
 Bytt pc navn: fagprove2019
 Sett IP til dynamisk slik at den kan få kontakt med ruter.
 Installer Chrome fra minnepenn
+Installer driver til skriver fra minnepenn
 
 # Windows settings, roller:
 
 ### Kjør Windows Update!
 
-Partioner disken slik at windows installasjonen har 100GB ledig
-Og 1 ekstra partion med resterende GB som du kaller for Data, det er her vi legger våre shares.
+Partioner disken slik at windows installasjonen har 50GB ledig
+Lag en Data partisjon med ca 100 GB ledig plass der er hær vi skal lagre share som felles, applikasjoner osv osv.
+Lag en Privat partisjon med resterende plass, på denne skal vi plassere hjemområdene til vær enkelt bruker.
+
 Dette gjøres slik at ikke C disken skal eventuelt fylles opp og skape problemer.
 
 I min installasjon trenger jeg roller for:
+- Active Directory Domain Services
 - DHCP
 - DNS
-- Active Directory Domain Services
 - Print and document services
 
 ## Active Directory Domain Services
@@ -108,7 +111,7 @@ I min installasjon trenger jeg roller for:
 *For video på GPO: Windows server 2012 - How to Deploy Network Printer by using GPO.*
 
 ## Shares
-- Legg til en mappe på egen disk kalt det du vil den skal være, f.eks Felles, Applikasjoner, Home osv.
+- Legg til en mappe på egen disk(Data) kalt det du vil de skal være, f.eks Felles, Applikasjoner, Home osv.
 - I mitt tillfelle la jeg disse mappene på egen partion som fikk bokstaven W.
 - Åpne Group Policy manager fra server managers under tools.
 - Gå til User Configuration, prefrences, Windows settings, Drive Maps.
