@@ -81,11 +81,7 @@ Default passordet ligger også som vedlegg til dokumentasjonen.
 Det første jeg gjorde under oppsett av ruteren var og skru av DHCP, dette er fordi at en egen server rolle skal ta seg av denne jobben og dette blir konfigurert under server konfigurasjonen.
 
 ## Server konfigurasjon
-
-
-
-
-Opplevde etter DHCP er deaktivert på ruteren at jeg måtte sette statisk IP på serveren til:
+Det første jeg gjorde på serveren var og sette opp statisk IP addresse siden DHCP er deaktivert på ruteren.
 
 IPV4:
 IP: 192.168.1.2
@@ -101,7 +97,6 @@ DNS:
 Byttet så default passord til ett sikkrere passord som ikke er allmenn tilgjengelig på nett for og forhindre at uvedkommende skal få adgang til ruteren. Dette passordet ligger også som vedlegg.
 
 Satt opp gjestenett under generelt og gjestenett la inn ett eget nettverksnavn til det og satt en tilgangstid til 1 dag.
-
 
 
 ## Begreper

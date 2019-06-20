@@ -92,7 +92,7 @@ Add-DHCPServerv4Scope -Name $ScopeNavn -StartRange $IpStartScope -EndRange $IpEn
 -SubnetMask 255.255.255.0 -State Active
 Set-DhcpServerv4Scope -ScopeId 192.168.1.0 -LeaseDuration 1.00:00:00
 Set-DHCPServerv4OptionValue -ScopeID 192.168.1.0 `
--DnsDomain $Domain -DnsServer 127.0.0.1 -Router 192.168.1.1
+-DnsDomain $Domain -DnsServer 192.168.1.1, 192.168.1.2 -Router 192.168.1.1
 ```
 
 ##### Lag OU #####
@@ -132,6 +132,6 @@ New-ADUser -Name $FultNavn -GivenName $Fornavn -Surname $Etternavn -DisplayName 
 -UserPrincipalName "$BrukerNavn@kolos.local" -SamAccountName "$BrukerNavn" `
 -Path "OU=Brukere,$DcPath"  -AccountPassword(Read-Host -AsSecureString "Input Password") `
 -Enabled $true -HomeDirectory "\\$env:computername\%username%" -HomeDrive "W:"
-Add-ADGroupMember -Identity "$Grupper" -Member $BrukerNavn
+Add-ADGroupMember -Identity "$Grupper" -Members $BrukerNavn
 ```
 
