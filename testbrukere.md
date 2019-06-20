@@ -1,36 +1,36 @@
 	### IT-Lærlinger:
 -Andre Hansen
 Bruker: andhan15
-Passord: youknowwhatitis
+Passord: Fagpr0ve!
 
 -Andre Fleines
 Bruker: andfle
-Passord: Admin123
+Passord: Engangspassord!
 
 ### IT-avdeling:
 -Bjørn Forselv:
 Bruker: bjofor
-Passord: Admin123
+Passord: Engangspassord!
 
 -Ronny Simonsen
 Bruker: ronsim
-Passord: Admin123
+Passord: Engangspassord!
 
 ### Administrasjon:
 - Lennard Karlsen
 Bruker: lenkar
-Passord: Admin123
+Passord: Engangspassord!
 
 - Linda Hjertø
 Bruker: linhje
-Passord: Admin123
+Passord: Engangspassord!
 
 ### Vaktmestere:
 -Knut Olsen
 Bruker: knuols
-Passord: Admin123
+Passord: Engangspassord!
 
 -Karl Børge Prestbakk:
 Bruker: karpre
-Passord: Admin123
+Passord: Engangspassord!
 

@@ -1,4 +1,4 @@
-# Automatisere server installasjon ved bruk av Powershell
+# Automatisere installasjon ved bruk av Powershell
 ![](https://i0.wp.com/blogit.create.pt/wp-content/uploads/2017/02/powershell-cim_1.jpg?fit=1118%2C628&ssl=1)
 
 Hvis dette var mitt levebrød og noe jeg hadde gjort dag ut og dag inn hadde jeg i såfall automatisert denne prosessen.
