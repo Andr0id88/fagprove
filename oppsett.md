@@ -48,22 +48,28 @@ Bytt dette til ett annet passord!
 ### Gjestenett:
 Gå til gjestenett under generelt, legg inn nettverksnavn, sett tilgangstid til 1 dag.
 
-### Oppstart
+# Windows Server
+
+## Oppstart ##
+
 Etter oppstart det første som må gjøres:
 Bytt pc navn: fagprove2019
 Sett IP til dynamisk slik at den kan få kontakt med ruter.
 Installer Chrome fra minnepenn
 Installer driver til skriver fra minnepenn
 
-# Windows settings, roller:
+## Windows settings, roller: ##
 
 ### Kjør Windows Update!
 
 Partioner disken slik at windows installasjonen har 50GB ledig
-Lag en Data partisjon med ca 100 GB ledig plass der er hær vi skal lagre share som felles, applikasjoner osv osv.
-Lag en Privat partisjon med resterende plass, på denne skal vi plassere hjemområdene til vær enkelt bruker.
-
+Lag en Data partisjon med resterende ledig plass der er hær vi skal lagre share som felles, applikasjoner, privat mapper(hjem mapper)
 Dette gjøres slik at ikke C disken skal eventuelt fylles opp og skape problemer.
+
+## Mapper
+For at powershell scriptet skal fungere er det viktig at jeg lager en mappe på datadisken kalt Privat og deler denne og setter legger til domain users
+med rettighetene read.
+Andre mapper vil avhenge av oppgaven, dette kan være mapper som Felles, Applikasjoner,
 
 I min installasjon trenger jeg roller for:
 - Active Directory Domain Services
