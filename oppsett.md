@@ -6,6 +6,19 @@ Bruk elev-pcer som klienmaskiner, det er viktig og huske og melde de inn i rett 
 
 ## Installasjon & konfigurering
 
+## Installasjon
+Valgt Engelsk språk, norsk keyboard layout samt tids sone.
+
+Valgte dettetter Windows Server 2019 Standard Evaluation (Desktop Experience) x64
+
+Godtok terms and agreements
+
+Under valg av hvilken type av installasjon ble Custom valgt
+
+Slettet alle tidligere partisjoner på disken.
+Laget enn ny partisjon på ca 50GB til windows installasjon.
+Deretter en 184GB partisjon til Data disk der brukere kan lagre filer, samt plass til hjemområde
+
 ### Vindu1, settings
 Username: Administrator
 Password: Fagpr0ve!
